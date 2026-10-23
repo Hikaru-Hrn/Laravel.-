@@ -1,0 +1,8 @@
+// Для проверки POST запроса
+POST http://127.0.0.1:8000/submit-data
+Content-Type: application/json
+Accept: application/json
+
+{
+    "username": "Weisner"
+}
