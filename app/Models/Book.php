@@ -35,7 +35,7 @@ class Book extends Model
         return $this->belongsTo(Category::class);
     }
 
-    public function authors(): BelongsTo
+    public function authors(): BelongsToMany
     {
         return $this->belongsToMany(Author::class);
     }
