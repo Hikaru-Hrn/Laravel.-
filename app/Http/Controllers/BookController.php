@@ -20,7 +20,7 @@ class BookController extends Controller
     public function create()
     {
         return view('books.create', [
-            'book' => new Book(),
+            'book' => new Book,
             'categories' => Category::orderBy('name')->get(),
             'authors' => Author::orderBy('name')->get(),
         ]);
