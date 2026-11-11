@@ -10,9 +10,13 @@ use Illuminate\Validation\Rule;
 
 class BookController extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {
-        $books = Book::with(['category', 'authors'])->latest()->get();
+        $books = Book::with(['category', 'authors'])
+            ->when($request->filled('search'), fn ($query) => $query->search($request->input('search')))
+            ->when($request->boolean('published'), fn ($query) => $query->published())
+            ->latest()
+            ->get();
 
         return BookResource::collection($books);
     }
