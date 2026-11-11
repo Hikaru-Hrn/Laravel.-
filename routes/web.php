@@ -3,6 +3,7 @@ use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\TestController;
 use App\Http\Controllers\ContactController;
+use App\Http\Controllers\BookController;
 
 // Роуты для формы
 Route::get('/contact', [ContactController::class, 'showForm'])->name('contact.show');
@@ -10,6 +11,9 @@ Route::post('/contact', [ContactController::class, 'handleForm'])->name('contact
 
 // Роут для таблицы
 Route::get('/contact/submission', [ContactController::class, 'listSubmissions'])->name('contact.submissions');
+
+// CRUD книг
+Route::resource('books', BookController::class);
 
 // Тестовые роуты
 Route::get('/greeting', [TestController::class, 'greeting']);

@@ -6,6 +6,7 @@
     </div>
     <nav>
         <a href="/" style="margin-right: 15px;">Главная</a>
+        <a href="/books" style="margin-right: 15px;">Книги</a>
         <a href="/about" style="margin-right: 15px;">О нас</a>
         <a href="/contact">Контакты</a>
     </nav>
